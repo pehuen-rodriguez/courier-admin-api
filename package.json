@@ -1,0 +1,24 @@
+{
+  "name": "courier-admin-api",
+  "version": "1.0.0",
+  "description": "Second API for courier-admin made in graphql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nayra Cooper",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "prisma": "^1.34.8",
+    "prisma-client-lib": "^1.34.8"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.2"
+  }
+}

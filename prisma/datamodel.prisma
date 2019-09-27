@@ -1,0 +1,12 @@
+type Client {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  name: String!
+  createdBy: User! @relation(link: INLINE)
+}
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+}
