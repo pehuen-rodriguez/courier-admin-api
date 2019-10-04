@@ -1,6 +1,8 @@
+scalar GraphQLDate
+
 type Query {
   info: String!
-  clients: [Client!]!
+  clients(filter: String, skip: Int, first: Int, orderBy: ClientOrderByInput): [Client!]!
   client(id: ID!): Client
 }
 type Mutation {
@@ -11,6 +13,7 @@ type Mutation {
 type Client {
   id: ID
   name: String
+  createdAt: GraphQLDate
   createdBy: User
 }
 type AuthPayload {
@@ -21,4 +24,13 @@ type User {
   id: ID!
   name: String!
   email: String!
+}
+type Subscription {
+  newClient: Client
+}
+enum ClientOrderByInput {
+  name_ASC
+  name_DESC
+  createdAt_ASC
+  createdAt_DESC
 }

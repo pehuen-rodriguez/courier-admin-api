@@ -34,9 +34,8 @@ async function login(parent, args, context, _info) {
 
 function post(parent, args, context, _info) {
   const userId = getUserId(context);
-  return context.prisma.createLink({
-    url: args.url,
-    description: args.description,
+  return context.prisma.createClient({
+    name: args.name,
     createdBy: { connect: { id: userId } },
   });
 }
