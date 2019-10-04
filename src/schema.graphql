@@ -2,7 +2,7 @@ scalar GraphQLDate
 
 type Query {
   info: String!
-  clients(filter: String, skip: Int, first: Int, orderBy: ClientOrderByInput): [Client!]!
+  clientList(filter: String, skip: Int, first: Int, orderBy: ClientOrderByInput): ClientList!
   client(id: ID!): Client
 }
 type Mutation {
@@ -15,6 +15,10 @@ type Client {
   name: String
   createdAt: GraphQLDate
   createdBy: User
+}
+type ClientList {
+  clients: [Client!]!
+  count: Int!
 }
 type AuthPayload {
   token: String
